@@ -29,6 +29,7 @@ Tenham presença digital acessível e profissional.
 │
 └── /imagens
     ├── logo.png
+    ├── cadastro.jpg
     ├── comunidade.jpg
     ├── projeto1.jpg
     └── voluntarios.jpg
@@ -67,7 +68,7 @@ Git/GitHub — Controle de versão e entrega pública.
 
 Baixe ou clone o repositório:
 
-git clone https://github.com/seu-usuario/esperanca-viva.git
+git clone https://github.com/DiegoBatina/Project.git
 
 
 Abra o arquivo principal:
