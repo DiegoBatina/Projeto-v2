@@ -68,7 +68,7 @@ Git/GitHub — Controle de versão e entrega pública.
 
 Baixe ou clone o repositório:
 
-git clone https://github.com/DiegoBatina/Project.git
+git clone https://github.com/DiegoBatina/Projeto-v2
 
 
 Abra o arquivo principal:
