@@ -1,218 +1,235 @@
-/* ===============================
-   Estilos Gerais - Esperança Viva
-   =============================== */
+/* =========================================
+   🎨 DESIGN SYSTEM
+   ========================================= */
+:root {
+  /* Cores principais */
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1e40af;
 
+  /* Cores secundárias e neutras */
+  --color-secondary: #f59e0b;
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f9fafb;
+  --color-neutral-400: #d1d5db;
+  --color-neutral-600: #4b5563;
+  --color-neutral-900: #111827;
+
+  /* Tipografia */
+  --font-family-base: 'Inter', Arial, sans-serif;
+  --font-size-xs: 0.75rem;  /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem;     /* 16px */
+  --font-size-lg: 1.25rem;  /* 20px */
+  --font-size-xl: 2rem;     /* 32px */
+
+  /* Espaçamentos */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
+/* =========================================
+   🔤 ESTILOS BÁSICOS
+   ========================================= */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-200);
   line-height: 1.6;
-  background-color: #fafafa;
-  color: #333;
 }
 
-/* ===== Cabeçalho ===== */
-
+/* =========================================
+   🧭 CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
 header {
-  background-color: #02abc2;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-neutral-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
 }
 
-header h1 {
-  margin-bottom: 10px;
-  font-size: 1.8em;
+header img {
+  max-width: 200px;
+  height: auto;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: var(--space-3);
 }
 
 nav a {
+  color: var(--color-neutral-100);
   text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-nav a:hover {
-  color: #b2dfdb;
+nav a:hover,
+nav a:focus {
+  color: var(--color-secondary);
 }
 
-nav a.ativo {
-  text-decoration: underline;
-}
-
-/* ===== Conteúdo Principal ===== */
-
-main {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-h2 {
-  color: #00796b;
-  margin-bottom: 10px;
-}
-
-h3 {
-  margin-top: 10px;
-  color: #004d40;
-}
-
-section {
-  margin-bottom: 40px;
-}
-
-p,
-li,
-address {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-ul {
-  margin-left: 20px;
-}
-
-/* ===== Imagens ===== */
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin: 10px 0;
-}
-
-/* ===== Formulários ===== */
-
-form {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-fieldset {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-legend {
-  font-weight: bold;
-  color: #00796b;
-}
-
-/* Campos de texto */
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: 500;
-}
-
-input,
-select,
-button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-/* === Ajuste dos botões de rádio === */
-fieldset label input[type="radio"] {
-  width: auto;
-  margin-right: 8px;
-  accent-color: #00796b;
-}
-
-fieldset label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-/* Botão de envio */
-button {
-  background-color: #00796b;
-  color: #fff;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-  padding: 12px;
-  border-radius: 6px;
-  width: 100%;
-  font-size: 1.05rem;
-}
-
-button:hover {
-  background-color: #005f55;
-}
-
-/* === Mensagem de sucesso === */
-#mensagem-sucesso {
+/* Botão de menu (mobile) */
+.menu-toggle {
   display: none;
-  background-color: #e6f7f4;
-  border: 1px solid #00796b;
-  color: #00796b;
-  padding: 12px;
-  border-radius: 6px;
-  text-align: center;
-  margin-top: 15px;
-  font-weight: bold;
+  flex-direction: column;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.menu-toggle span {
+  height: 4px;
+  background: var(--color-neutral-100);
+  margin: 4px 0;
+  border-radius: 2px;
 }
 
-/* ===== Rodapé ===== */
+/* =========================================
+   🧱 CONTEÚDO PRINCIPAL
+   ========================================= */
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: var(--space-5) auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-4);
+}
 
+/* Seções */
+section {
+  grid-column: span 12;
+  background-color: var(--color-neutral-100);
+  padding: var(--space-4);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: var(--space-4);
+}
+
+section h2 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-3);
+}
+
+section img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: var(--space-3);
+}
+
+/* Artigos dentro de seções */
+article {
+  margin-bottom: var(--space-3);
+}
+article h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+/* =========================================
+   📞 CONTATO
+   ========================================= */
+address {
+  font-style: normal;
+  background-color: var(--color-neutral-200);
+  padding: var(--space-3);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 4px;
+}
+
+/* =========================================
+   ⚙️ RODAPÉ
+   ========================================= */
 footer {
-  background-color: #004d40;
-  color: #fff;
+  background-color: var(--color-primary-dark);
+  color: var(--color-neutral-100);
   text-align: center;
-  padding: 15px 10px;
-  margin-top: 40px;
-  font-size: 0.9rem;
+  padding: var(--space-3);
+  font-size: var(--font-size-sm);
 }
 
-/* ===== Responsividade ===== */
+/* =========================================
+   📱 RESPONSIVIDADE (não muda desktop)
+   ========================================= */
 
+/* 1️⃣ Laptops médios */
+@media (max-width: 1200px) {
+  main {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* 2️⃣ Tablets grandes */
+@media (max-width: 992px) {
+  header img {
+    max-width: 160px;
+  }
+}
+
+/* 3️⃣ Tablets */
 @media (max-width: 768px) {
   nav ul {
+    display: none;
     flex-direction: column;
-    gap: 10px;
+    background: var(--color-primary-dark);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 0 8px;
   }
 
-  header h1 {
-    font-size: 1.5em;
+  nav ul.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  header {
+    flex-wrap: wrap;
   }
 
   main {
-    padding: 10px;
+    grid-template-columns: repeat(6, 1fr);
   }
 
-  button {
-    width: 100%;
+  section {
+    grid-column: span 6;
   }
+}
 
-  fieldset label {
-    flex-direction: row;
-    align-items: center;
+/* 4️⃣ Celulares médios */
+@media (max-width: 576px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  section {
+    grid-column: span 4;
+  }
+}
+
+/* 5️⃣ Celulares pequenos */
+@media (max-width: 400px) {
+  header img {
+    max-width: 140px;
   }
 }
