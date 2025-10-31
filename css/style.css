@@ -165,6 +165,43 @@ footer {
   font-size: var(--font-size-sm);
 }
 
+.hamb{
+  display: none;
+  cursor: pointer;
+  float: right;
+  padding: 40px 20px;
+}/* Style label tag */
+
+.hamb-line {
+  background: var(--color-neutral-100);
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+  background: var(--color-neutral-100);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.side-menu {
+  display: none;
+}
+
+.hamb-line::before{
+  top: 5px;
+}
+.hamb-line::after{
+  top: -5px;
+}
 /* =========================================
    📱 RESPONSIVIDADE (não muda desktop)
    ========================================= */
@@ -185,15 +222,28 @@ footer {
 
 /* 3️⃣ Tablets */
 @media (max-width: 768px) {
+  .hamb{
+    display: block;
+    justify-self: end;
+  }
+  .side-menu {
+    display: none;
+  }
+
   nav ul {
     display: none;
     flex-direction: column;
     background: var(--color-primary-dark);
     position: absolute;
-    top: 70px;
+    top: 100%;
     right: 0;
-    width: 200px;
-    border-radius: 0 0 0 8px;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    text-align: center
+  }
+
+  li {
+    padding: 4px 0;
   }
 
   nav ul.open {
@@ -205,7 +255,10 @@ footer {
   }
 
   header {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    justify-content: space-around;
   }
 
   main {
@@ -214,6 +267,22 @@ footer {
 
   section {
     grid-column: span 6;
+  }
+
+  .side-menu:checked ~ nav ul{
+    max-height: 100%;
+    display: block;
+  }
+  .side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+  }
+  .side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+  }
+  .side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
   }
 }
 

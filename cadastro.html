@@ -10,8 +10,10 @@
 <body>
   <header>
     <img src="imagens/logo.png" alt="Logotipo da ONG Esperança Viva" width="420">
+    <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
     <nav>
-      <ul>
+      <ul class="menu">
         <li><a href="index.html">Início</a></li>
         <li><a href="projetos.html">Projetos</a></li>
         <li><a href="cadastro.html" class="ativo">Cadastro</a></li>
@@ -60,7 +62,7 @@
                  placeholder="00000-000" required>
 
           <label for="cidade">Cidade:</label>
-          <input type="text" id="cidade" name="cidade" placeholder="São Paulo"required>
+          <input type="text" id="cidade" name="cidade" placeholder="São Paulo" required>
 
           <label for="estado">Estado:</label>
           <input type="text" id="estado" name="estado" maxlength="2" placeholder="SP" required>
