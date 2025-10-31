@@ -1,4 +1,4 @@
-🕊️ Esperança Viva — Plataforma Web para ONGs
+🕊️ Esperança Viva — Plataforma Web para ONGs v2
 📘 Descrição
 
 A Esperança Viva é uma plataforma web fictícia desenvolvida como parte da Experiência Prática I da disciplina de Desenvolvimento Front-End.
